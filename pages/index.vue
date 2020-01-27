@@ -1,6 +1,19 @@
 <template>
   <div class="container">
     <div>
+
+      <h2>ログイン状態:{{ $auth.loggedIn }}</h2>
+      <p>{{ $store.state.auth.user }}</p>
+      <div>
+        <nav>
+        <nuxt-link to="/login">Login</nuxt-link>
+        </nav>
+      </div>
+      <div v-if="$auth.loggedIn">
+  <button @click="$auth.logout()">logout</button>
+
+
+      </div>
       <logo />
       <h1 class="title">
         front_Nuxt
